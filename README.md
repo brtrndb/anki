@@ -12,7 +12,7 @@ The **student** **studies** the question, tries to guess the answer and then loo
 When all the card has been seen, the **session** is over : 
 
 - The cards in the red box will be studied again the same day
-- The cards in the orange box will be studied again the next
+- The cards in the orange box will be studied again the next day
 - The cards in the green box, will be studied again two days later
 
 For example:
