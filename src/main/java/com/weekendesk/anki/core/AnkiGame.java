@@ -38,6 +38,7 @@ public class AnkiGame
 	public void start()
 	{
 		log.debug("Preparing game.");
+		System.out.println("Welcome to Anki !");
 		try
 		{
 			buildSession();
@@ -72,6 +73,8 @@ public class AnkiGame
 			System.out.println("You've already mastered all questions !");
 			return;
 		}
+
+		System.out.println("Today, there are " + cardsToStudy.size() + " questions to memorise.");
 
 		try (InputStreamReader isr = new InputStreamReader(System.in); BufferedReader br = new BufferedReader(isr))
 		{
