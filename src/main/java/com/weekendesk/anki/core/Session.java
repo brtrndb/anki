@@ -67,7 +67,7 @@ public class Session
 	{
 		try (Stream<String> stream = Files.lines(Paths.get(this.sessionFilePath)).skip(1))
 		{
-			this.boxes = stream.map(this::lineToCard).collect(Collectors.groupingBy(Card::getColor));
+			this.boxes = stream.sorted().map(this::lineToCard).collect(Collectors.groupingBy(Card::getColor));
 			for (BoxColor color : BoxColor.values()) // Fill empty boxes.
 				if (!this.boxes.containsKey(color))
 					this.boxes.put(color, new ArrayList<>());
