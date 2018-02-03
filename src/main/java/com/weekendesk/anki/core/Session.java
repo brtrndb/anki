@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.weekendesk.anki.core;
 
 import java.io.IOException;
@@ -16,10 +13,6 @@ import java.util.stream.Stream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @author bertrand
- *
- */
 public class Session
 {
 	private static final Logger			log					= LoggerFactory.getLogger(Session.class);
@@ -29,27 +22,16 @@ public class Session
 	private String						sessionFilePath;
 	private Map<BoxColor, List<Card>>	boxes;
 
-	/**
-	 * Create a session from saved file.
-	 */
 	public Session()
 	{
 		this(SESSION_FILENAME);
 	}
 
-	/**
-	 * Create a session from a new set of cards.
-	 */
 	public Session(String sessionFilePath)
 	{
 		this.sessionFilePath = sessionFilePath;
 	}
 
-	/**
-	 * Load the session.
-	 * 
-	 * @throws AnkiException
-	 */
 	public void load() throws AnkiException
 	{
 		log.debug("Building cards and boxes for this session.");
@@ -58,11 +40,6 @@ public class Session
 		log.debug("Cards built.");
 	}
 
-	/**
-	 * Load the files and build questions.
-	 * 
-	 * @throws AnkiException
-	 */
 	private void loadFile() throws AnkiException
 	{
 		try (Stream<String> stream = Files.lines(Paths.get(this.sessionFilePath)).skip(1))
@@ -78,12 +55,6 @@ public class Session
 		}
 	}
 
-	/**
-	 * Build a question from a line.
-	 * 
-	 * @param line
-	 * @return The question.
-	 */
 	private Card lineToCard(String line)
 	{
 		Card card;
@@ -112,9 +83,6 @@ public class Session
 		this.boxes.get(color).add(card);
 	}
 
-	/**
-	 * End the session.
-	 */
 	public void end()
 	{
 		this.boxes.get(BoxColor.RED).clear();
@@ -125,11 +93,6 @@ public class Session
 					.forEach(Card::promote);
 	}
 
-	/**
-	 * Save the session to a file.
-	 * 
-	 * @throws AnkiException
-	 */
 	public void save() throws AnkiException
 	{
 		try
@@ -149,9 +112,6 @@ public class Session
 		}
 	}
 
-	/**
-	 * Log the state of the session.
-	 */
 	private void state()
 	{
 		List<Card> red = this.boxes.get(BoxColor.RED);

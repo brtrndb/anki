@@ -1,16 +1,9 @@
-/**
- * 
- */
 package com.weekendesk.anki.core;
 
-/**
- * @author bertrand
- *
- */
 public enum BoxColor
 {
-	RED("RED", null), 
-	ORANGE("ORANGE", RED), 
+	RED("RED", null),
+	ORANGE("ORANGE", RED),
 	GREEN("GREEN", ORANGE);
 
 	private final String	color;

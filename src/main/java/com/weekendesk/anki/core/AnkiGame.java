@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.weekendesk.anki.core;
 
 import java.io.BufferedReader;
@@ -11,10 +8,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @author bertrand
- *
- */
 public class AnkiGame
 {
 	private static final Logger	log	= LoggerFactory.getLogger(AnkiGame.class);
@@ -22,19 +15,11 @@ public class AnkiGame
 	private String				sessionFilePath;
 	private Session				session;
 
-	/**
-	 * 
-	 * @param sessionFilePath
-	 *            Path to questions file.
-	 */
 	public AnkiGame(String sessionFilePath)
 	{
 		this.sessionFilePath = sessionFilePath;
 	}
 
-	/**
-	 * Start the game.
-	 */
 	public void start()
 	{
 		log.debug("Preparing game.");
@@ -53,7 +38,7 @@ public class AnkiGame
 
 	private void buildSession() throws AnkiException
 	{
-		if (sessionFilePath == null)
+		if (this.sessionFilePath == null)
 			this.session = new Session();
 		else
 			this.session = new Session(this.sessionFilePath);

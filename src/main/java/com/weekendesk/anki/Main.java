@@ -23,12 +23,6 @@ public final class Main
 		}
 	}
 
-	/**
-	 * Build the game from command line parameters.
-	 * 
-	 * @param args
-	 * @return The game.
-	 */
 	private static AnkiGame buildGame(String[] args)
 	{
 		AnkiGame game;
