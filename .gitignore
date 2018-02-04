@@ -101,5 +101,7 @@ buildNumber.properties
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
 
+# TestNG output folder
+test-output/
 
 # End of https://www.gitignore.io/api/git,java,maven,eclipse
