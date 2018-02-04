@@ -1,7 +1,7 @@
 /**
- * 
+ *
  */
-package com.weekendesk.anki.core;
+package com.weekendesk.anki.core.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -9,14 +9,13 @@ import org.testng.annotations.Test;
 
 /**
  * @author bertrand
- *
  */
 public class BoxColorTests
 {
 	@Test
 	public void fromStringTestOK()
 	{
-		BoxColor color = BoxColor.fromString("RED");
+		final BoxColor color = BoxColor.fromString("RED");
 		assertThat(color).isEqualTo(BoxColor.RED);
 	}
 

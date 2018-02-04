@@ -1,4 +1,4 @@
-package com.weekendesk.anki.core;
+package com.weekendesk.anki.core.model;
 
 public class AnkiException extends Exception
 {

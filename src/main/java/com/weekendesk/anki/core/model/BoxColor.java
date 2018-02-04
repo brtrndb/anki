@@ -1,4 +1,4 @@
-package com.weekendesk.anki.core;
+package com.weekendesk.anki.core.model;
 
 public enum BoxColor
 {
@@ -17,12 +17,14 @@ public enum BoxColor
 
 	public BoxColor next()
 	{
+		if (this == BoxColor.RED)
+			return (BoxColor.RED);
 		return (this.next);
 	}
 
 	public static BoxColor fromString(String str)
 	{
-		for (BoxColor color : values())
+		for (BoxColor color : BoxColor.values())
 			if (color.color.equals(str))
 				return color;
 		throw new IllegalArgumentException("Invalid color " + str);
